@@ -6,9 +6,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>User Guide - GraphFrames 0.4.0 Documentation</title>
+        <title>User Guide - GraphFrames 0.5.0 Documentation</title>
         
-          <meta name="description" content="GraphFrames 0.4.0 user guide">
+          <meta name="description" content="GraphFrames 0.5.0 user guide">
         
 
         
@@ -55,7 +55,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <div class="brand"><a href="index.html">
-                      GraphFrames</a><span class="version">0.4.0</span>
+                      GraphFrames</a><span class="version">0.5.0</span>
                     </div>
                     <ul class="nav">
                         <li><a href="index.html">Overview</a></li>
@@ -76,7 +76,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.4.0</span></p>-->
+                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.5.0</span></p>-->
                 </div>
             </div>
         </div>
@@ -90,28 +90,28 @@
 general graph algorithms.  This includes code examples in Scala and Python.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#creating-graphframes">Creating GraphFrames</a></li>
-  <li><a href="#basic-graph-and-dataframe-queries">Basic graph and DataFrame queries</a></li>
-  <li><a href="#motif-finding">Motif finding</a></li>
-  <li><a href="#subgraphs">Subgraphs</a></li>
-  <li><a href="#graph-algorithms">Graph algorithms</a>    <ul>
-      <li><a href="#breadth-first-search-bfs">Breadth-first search (BFS)</a></li>
-      <li><a href="#connected-components">Connected components</a>        <ul>
-          <li><a href="#strongly-connected-components">Strongly connected components</a></li>
+  <li><a href="#creating-graphframes" id="markdown-toc-creating-graphframes">Creating GraphFrames</a></li>
+  <li><a href="#basic-graph-and-dataframe-queries" id="markdown-toc-basic-graph-and-dataframe-queries">Basic graph and DataFrame queries</a></li>
+  <li><a href="#motif-finding" id="markdown-toc-motif-finding">Motif finding</a></li>
+  <li><a href="#subgraphs" id="markdown-toc-subgraphs">Subgraphs</a></li>
+  <li><a href="#graph-algorithms" id="markdown-toc-graph-algorithms">Graph algorithms</a>    <ul>
+      <li><a href="#breadth-first-search-bfs" id="markdown-toc-breadth-first-search-bfs">Breadth-first search (BFS)</a></li>
+      <li><a href="#connected-components" id="markdown-toc-connected-components">Connected components</a>        <ul>
+          <li><a href="#strongly-connected-components" id="markdown-toc-strongly-connected-components">Strongly connected components</a></li>
         </ul>
       </li>
-      <li><a href="#label-propagation-algorithm-lpa">Label Propagation Algorithm (LPA)</a></li>
-      <li><a href="#pagerank">PageRank</a></li>
-      <li><a href="#shortest-paths">Shortest paths</a></li>
-      <li><a href="#triangle-count">Triangle count</a></li>
+      <li><a href="#label-propagation-algorithm-lpa" id="markdown-toc-label-propagation-algorithm-lpa">Label Propagation Algorithm (LPA)</a></li>
+      <li><a href="#pagerank" id="markdown-toc-pagerank">PageRank</a></li>
+      <li><a href="#shortest-paths" id="markdown-toc-shortest-paths">Shortest paths</a></li>
+      <li><a href="#triangle-count" id="markdown-toc-triangle-count">Triangle count</a></li>
     </ul>
   </li>
-  <li><a href="#saving-and-loading-graphframes">Saving and loading GraphFrames</a></li>
-  <li><a href="#message-passing-via-aggregatemessages">Message passing via AggregateMessages</a></li>
-  <li><a href="#graphx-graphframe-conversions">GraphX-GraphFrame conversions</a>    <ul>
-      <li><a href="#graphframe-to-graphx">GraphFrame to GraphX</a></li>
-      <li><a href="#graphx-to-graphframe">GraphX to GraphFrame</a></li>
-      <li><a href="#example-conversions">Example conversions</a></li>
+  <li><a href="#saving-and-loading-graphframes" id="markdown-toc-saving-and-loading-graphframes">Saving and loading GraphFrames</a></li>
+  <li><a href="#message-passing-via-aggregatemessages" id="markdown-toc-message-passing-via-aggregatemessages">Message passing via AggregateMessages</a></li>
+  <li><a href="#graphx-graphframe-conversions" id="markdown-toc-graphx-graphframe-conversions">GraphX-GraphFrame conversions</a>    <ul>
+      <li><a href="#graphframe-to-graphx" id="markdown-toc-graphframe-to-graphx">GraphFrame to GraphX</a></li>
+      <li><a href="#graphx-to-graphframe" id="markdown-toc-graphx-to-graphframe">GraphX to GraphFrame</a></li>
+      <li><a href="#example-conversions" id="markdown-toc-example-conversions">Example conversions</a></li>
     </ul>
   </li>
 </ul>
@@ -142,7 +142,7 @@ The following example demonstrates how to create a GraphFrame from vertex and ed
 
 <div data-lang="scala">
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="c1">// Vertex DataFrame</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="c1">// Vertex DataFrame</span>
 <span class="k">val</span> <span class="n">v</span> <span class="k">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span>
   <span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;Alice&quot;</span><span class="o">,</span> <span class="mi">34</span><span class="o">),</span>
   <span class="o">(</span><span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;Bob&quot;</span><span class="o">,</span> <span class="mi">36</span><span class="o">),</span>
@@ -168,40 +168,40 @@ The following example demonstrates how to create a GraphFrame from vertex and ed
 
     <p>The GraphFrame constructed above is available in the GraphFrames package:</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span></code></pre></figure>
 
   </div>
 
 <div data-lang="python">
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Vertex DataFrame</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="c1"># Vertex DataFrame</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
-  <span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">34</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="s">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;David&quot;</span><span class="p">,</span> <span class="mi">29</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;Esther&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;f&quot;</span><span class="p">,</span> <span class="s">&quot;Fanny&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;g&quot;</span><span class="p">,</span> <span class="s">&quot;Gabby&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-<span class="p">],</span> <span class="p">[</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;age&quot;</span><span class="p">])</span>
-<span class="c"># Edge DataFrame</span>
+  <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">34</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="mi">29</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;Esther&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;Fanny&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;Gabby&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="p">],</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">])</span>
+<span class="c1"># Edge DataFrame</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
-  <span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;friend&quot;</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="s">&quot;follow&quot;</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;follow&quot;</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;f&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="s">&quot;follow&quot;</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;f&quot;</span><span class="p">,</span> <span class="s">&quot;follow&quot;</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;friend&quot;</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;friend&quot;</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;friend&quot;</span><span class="p">)</span>
-<span class="p">],</span> <span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">,</span> <span class="s">&quot;dst&quot;</span><span class="p">,</span> <span class="s">&quot;relationship&quot;</span><span class="p">])</span>
-<span class="c"># Create a GraphFrame</span>
+  <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;friend&quot;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;follow&quot;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;follow&quot;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;follow&quot;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;follow&quot;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;friend&quot;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;friend&quot;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;friend&quot;</span><span class="p">)</span>
+<span class="p">],</span> <span class="p">[</span><span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;dst&quot;</span><span class="p">,</span> <span class="s2">&quot;relationship&quot;</span><span class="p">])</span>
+<span class="c1"># Create a GraphFrame</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">GraphFrame</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span></code></pre></figure>
 
     <p>The GraphFrame constructed above is available in the GraphFrames package:</p>
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span></code></pre></figure>
 
   </div>
@@ -220,7 +220,7 @@ as <code>vertices</code> and <code>edges</code> fields in the GraphFrame.</p>
 
 <div data-lang="scala">
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="c1">// Display the vertex and edge DataFrames</span>
@@ -269,47 +269,47 @@ as <code>vertices</code> and <code>edges</code> fields in the GraphFrame.</p>
 
 <div data-lang="python">
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
-<span class="c"># Display the vertex and edge DataFrames</span>
+<span class="c1"># Display the vertex and edge DataFrames</span>
 <span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c"># +--+-------+---+</span>
-<span class="c"># |id|   name|age|</span>
-<span class="c"># +--+-------+---+</span>
-<span class="c"># | a|  Alice| 34|</span>
-<span class="c"># | b|    Bob| 36|</span>
-<span class="c"># | c|Charlie| 30|</span>
-<span class="c"># | d|  David| 29|</span>
-<span class="c"># | e| Esther| 32|</span>
-<span class="c"># | f|  Fanny| 36|</span>
-<span class="c"># | g|  Gabby| 60|</span>
-<span class="c"># +--+-------+---+</span>
+<span class="c1"># +--+-------+---+</span>
+<span class="c1"># |id|   name|age|</span>
+<span class="c1"># +--+-------+---+</span>
+<span class="c1"># | a|  Alice| 34|</span>
+<span class="c1"># | b|    Bob| 36|</span>
+<span class="c1"># | c|Charlie| 30|</span>
+<span class="c1"># | d|  David| 29|</span>
+<span class="c1"># | e| Esther| 32|</span>
+<span class="c1"># | f|  Fanny| 36|</span>
+<span class="c1"># | g|  Gabby| 60|</span>
+<span class="c1"># +--+-------+---+</span>
 
 <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c"># +---+---+------------+</span>
-<span class="c"># |src|dst|relationship|</span>
-<span class="c"># +---+---+------------+</span>
-<span class="c"># |  a|  b|      friend|</span>
-<span class="c"># |  b|  c|      follow|</span>
-<span class="c"># |  c|  b|      follow|</span>
-<span class="c"># |  f|  c|      follow|</span>
-<span class="c"># |  e|  f|      follow|</span>
-<span class="c"># |  e|  d|      friend|</span>
-<span class="c"># |  d|  a|      friend|</span>
-<span class="c"># |  a|  e|      friend|</span>
-<span class="c"># +---+---+------------+</span>
+<span class="c1"># +---+---+------------+</span>
+<span class="c1"># |src|dst|relationship|</span>
+<span class="c1"># +---+---+------------+</span>
+<span class="c1"># |  a|  b|      friend|</span>
+<span class="c1"># |  b|  c|      follow|</span>
+<span class="c1"># |  c|  b|      follow|</span>
+<span class="c1"># |  f|  c|      follow|</span>
+<span class="c1"># |  e|  f|      follow|</span>
+<span class="c1"># |  e|  d|      friend|</span>
+<span class="c1"># |  d|  a|      friend|</span>
+<span class="c1"># |  a|  e|      friend|</span>
+<span class="c1"># +---+---+------------+</span>
 
-<span class="c"># Get a DataFrame with columns &quot;id&quot; and &quot;inDegree&quot; (in-degree)</span>
+<span class="c1"># Get a DataFrame with columns &quot;id&quot; and &quot;inDegree&quot; (in-degree)</span>
 <span class="n">vertexInDegrees</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">inDegrees</span>
 
-<span class="c"># Find the youngest user&#39;s age in the graph.</span>
-<span class="c"># This queries the vertex DataFrame.</span>
-<span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">groupBy</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Find the youngest user&#39;s age in the graph.</span>
+<span class="c1"># This queries the vertex DataFrame.</span>
+<span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">groupBy</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c"># Count the number of &quot;follows&quot; in the graph.</span>
-<span class="c"># This queries the edge DataFrame.</span>
-<span class="n">numFollows</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s">&quot;relationship = &#39;follow&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span></code></pre></figure>
+<span class="c1"># Count the number of &quot;follows&quot; in the graph.</span>
+<span class="c1"># This queries the edge DataFrame.</span>
+<span class="n">numFollows</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;relationship = &#39;follow&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -368,7 +368,7 @@ can be expressed by applying filters to the result <code>DataFrame</code>.</p>
 
     <p>For API details, refer to the <a href="api/scala/index.html#org.graphframes.GraphFrame">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="c1">// Search for pairs of vertices with edges in both directions between them.</span>
@@ -384,15 +384,15 @@ can be expressed by applying filters to the result <code>DataFrame</code>.</p>
 
     <p>For API details, refer to the <a href="api/python/graphframes.html#graphframes.GraphFrame.find">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
-<span class="c"># Search for pairs of vertices with edges in both directions between them.</span>
-<span class="n">motifs</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;(a)-[e]-&gt;(b); (b)-[e2]-&gt;(a)&quot;</span><span class="p">)</span>
+<span class="c1"># Search for pairs of vertices with edges in both directions between them.</span>
+<span class="n">motifs</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;(a)-[e]-&gt;(b); (b)-[e2]-&gt;(a)&quot;</span><span class="p">)</span>
 <span class="n">motifs</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c"># More complex queries can be expressed by applying filters.</span>
-<span class="n">motifs</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s">&quot;b.age &gt; 30&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="c1"># More complex queries can be expressed by applying filters.</span>
+<span class="n">motifs</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;b.age &gt; 30&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -424,7 +424,7 @@ In this example, the state is the current count of &#8220;friend&#8221; edges; i
 
 <div data-lang="scala">
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.apache.spark.sql.Column</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.apache.spark.sql.Column</span>
 <span class="k">import</span> <span class="nn">org.apache.spark.sql.functions.</span><span class="o">{</span><span class="n">col</span><span class="o">,</span> <span class="n">when</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 
@@ -450,22 +450,22 @@ In this example, the state is the current count of &#8220;friend&#8221; edges; i
 
 <div data-lang="python">
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">col</span><span class="p">,</span> <span class="n">lit</span><span class="p">,</span> <span class="n">udf</span><span class="p">,</span> <span class="n">when</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">col</span><span class="p">,</span> <span class="n">lit</span><span class="p">,</span> <span class="n">udf</span><span class="p">,</span> <span class="n">when</span>
 <span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">IntegerType</span>
 <span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
-<span class="n">chain4</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;(a)-[ab]-&gt;(b); (b)-[bc]-&gt;(c); (c)-[cd]-&gt;(d)&quot;</span><span class="p">)</span>
+<span class="n">chain4</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;(a)-[ab]-&gt;(b); (b)-[bc]-&gt;(c); (c)-[cd]-&gt;(d)&quot;</span><span class="p">)</span>
 
-<span class="c"># Query on sequence, with state (cnt)</span>
-<span class="c">#  (a) Define method for updating state given the next element of the motif.</span>
+<span class="c1"># Query on sequence, with state (cnt)</span>
+<span class="c1">#  (a) Define method for updating state given the next element of the motif.</span>
 <span class="n">sumFriends</span> <span class="o">=</span>\
-  <span class="k">lambda</span> <span class="n">cnt</span><span class="p">,</span><span class="n">relationship</span><span class="p">:</span> <span class="n">when</span><span class="p">(</span><span class="n">relationship</span> <span class="o">==</span> <span class="s">&quot;friend&quot;</span><span class="p">,</span> <span class="n">cnt</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">otherwise</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
-<span class="c">#  (b) Use sequence operation to apply method to sequence of elements in motif.</span>
-<span class="c">#      In this case, the elements are the 3 edges.</span>
+  <span class="k">lambda</span> <span class="n">cnt</span><span class="p">,</span><span class="n">relationship</span><span class="p">:</span> <span class="n">when</span><span class="p">(</span><span class="n">relationship</span> <span class="o">==</span> <span class="s2">&quot;friend&quot;</span><span class="p">,</span> <span class="n">cnt</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">otherwise</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+<span class="c1">#  (b) Use sequence operation to apply method to sequence of elements in motif.</span>
+<span class="c1">#      In this case, the elements are the 3 edges.</span>
 <span class="n">condition</span> <span class="o">=</span>\
-  <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">cnt</span><span class="p">,</span><span class="n">e</span><span class="p">:</span> <span class="n">sumFriends</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="n">col</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">relationship</span><span class="p">),</span> <span class="p">[</span><span class="s">&quot;ab&quot;</span><span class="p">,</span> <span class="s">&quot;bc&quot;</span><span class="p">,</span> <span class="s">&quot;cd&quot;</span><span class="p">],</span> <span class="n">lit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="c">#  (c) Apply filter to DataFrame.</span>
+  <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">cnt</span><span class="p">,</span><span class="n">e</span><span class="p">:</span> <span class="n">sumFriends</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="n">col</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">relationship</span><span class="p">),</span> <span class="p">[</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="s2">&quot;bc&quot;</span><span class="p">,</span> <span class="s2">&quot;cd&quot;</span><span class="p">],</span> <span class="n">lit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="c1">#  (c) Apply filter to DataFrame.</span>
 <span class="n">chainWith2Friends2</span> <span class="o">=</span> <span class="n">chain4</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">condition</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">chainWith2Friends2</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
@@ -493,7 +493,7 @@ The following example shows how to select a subgraph based upon vertex and edge 
 
 <div data-lang="scala">
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>
 
 <span class="c1">// Select subgraph of users older than 30, and edges of type &quot;friend&quot;</span>
@@ -505,12 +505,12 @@ The following example shows how to select a subgraph based upon vertex and edge 
 
 <div data-lang="python">
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
-<span class="c"># Select subgraph of users older than 30, and edges of type &quot;friend&quot;</span>
-<span class="n">v2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s">&quot;age &gt; 30&quot;</span><span class="p">)</span>
-<span class="n">e2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s">&quot;relationship = &#39;friend&#39;&quot;</span><span class="p">)</span>
+<span class="c1"># Select subgraph of users older than 30, and edges of type &quot;friend&quot;</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;age &gt; 30&quot;</span><span class="p">)</span>
+<span class="n">e2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;relationship = &#39;friend&#39;&quot;</span><span class="p">)</span>
 <span class="n">g2</span> <span class="o">=</span> <span class="n">GraphFrame</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">e2</span><span class="p">)</span></code></pre></figure>
 
   </div>
@@ -526,7 +526,7 @@ triplets by using more complex motifs.</p>
 
 <div data-lang="scala">
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="c1">// Select subgraph based on edges &quot;e&quot; of type &quot;follow&quot;</span>
@@ -546,20 +546,20 @@ triplets by using more complex motifs.</p>
 
 <div data-lang="python">
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
-<span class="c"># Select subgraph based on edges &quot;e&quot; of type &quot;follow&quot;</span>
-<span class="c"># pointing from a younger user &quot;a&quot; to an older user &quot;b&quot;.</span>
-<span class="n">paths</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;(a)-[e]-&gt;(b)&quot;</span><span class="p">)</span>\
-  <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s">&quot;e.relationship = &#39;follow&#39;&quot;</span><span class="p">)</span>\
-  <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s">&quot;a.age &lt; b.age&quot;</span><span class="p">)</span>
-<span class="c"># &quot;paths&quot; contains vertex info. Extract the edges.</span>
-<span class="n">e2</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;e.src&quot;</span><span class="p">,</span> <span class="s">&quot;e.dst&quot;</span><span class="p">,</span> <span class="s">&quot;e.relationship&quot;</span><span class="p">)</span>
-<span class="c"># In Spark 1.5+, the user may simplify this call:</span>
-<span class="c">#  val e2 = paths.select(&quot;e.*&quot;)</span>
+<span class="c1"># Select subgraph based on edges &quot;e&quot; of type &quot;follow&quot;</span>
+<span class="c1"># pointing from a younger user &quot;a&quot; to an older user &quot;b&quot;.</span>
+<span class="n">paths</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;(a)-[e]-&gt;(b)&quot;</span><span class="p">)</span>\
+  <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;e.relationship = &#39;follow&#39;&quot;</span><span class="p">)</span>\
+  <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;a.age &lt; b.age&quot;</span><span class="p">)</span>
+<span class="c1"># &quot;paths&quot; contains vertex info. Extract the edges.</span>
+<span class="n">e2</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;e.src&quot;</span><span class="p">,</span> <span class="s2">&quot;e.dst&quot;</span><span class="p">,</span> <span class="s2">&quot;e.relationship&quot;</span><span class="p">)</span>
+<span class="c1"># In Spark 1.5+, the user may simplify this call:</span>
+<span class="c1">#  val e2 = paths.select(&quot;e.*&quot;)</span>
 
-<span class="c"># Construct the subgraph</span>
+<span class="c1"># Construct the subgraph</span>
 <span class="n">g2</span> <span class="o">=</span> <span class="n">GraphFrame</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="p">,</span> <span class="n">e2</span><span class="p">)</span></code></pre></figure>
 
   </div>
@@ -592,7 +592,7 @@ The following code snippets search for people connected to the user "Bob."
 
     <p>For API details, refer to the <a href="api/scala/index.html#org.graphframes.lib.BFS">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="c1">// Search from &quot;Esther&quot; for users of age &lt;= 32.</span>
@@ -611,16 +611,16 @@ The following code snippets search for people connected to the user "Bob."
 
     <p>For API details, refer to the <a href="api/python/graphframes.html#graphframes.GraphFrame.bfs">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
-<span class="c"># Search from &quot;Esther&quot; for users of age &lt; 32.</span>
-<span class="n">paths</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="s">&quot;name = &#39;Esther&#39;&quot;</span><span class="p">,</span> <span class="s">&quot;age &lt; 32&quot;</span><span class="p">)</span>
+<span class="c1"># Search from &quot;Esther&quot; for users of age &lt; 32.</span>
+<span class="n">paths</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="s2">&quot;name = &#39;Esther&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;age &lt; 32&quot;</span><span class="p">)</span>
 <span class="n">paths</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c"># Specify edge filters or max path lengths.</span>
-<span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="s">&quot;name = &#39;Esther&#39;&quot;</span><span class="p">,</span> <span class="s">&quot;age &lt; 32&quot;</span><span class="p">,</span>\
-  <span class="n">edgeFilter</span><span class="o">=</span><span class="s">&quot;relationship != &#39;friend&#39;&quot;</span><span class="p">,</span> <span class="n">maxPathLength</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span></code></pre></figure>
+<span class="c1"># Specify edge filters or max path lengths.</span>
+<span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="s2">&quot;name = &#39;Esther&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;age &lt; 32&quot;</span><span class="p">,</span>\
+  <span class="n">edgeFilter</span><span class="o">=</span><span class="s2">&quot;relationship != &#39;friend&#39;&quot;</span><span class="p">,</span> <span class="n">maxPathLength</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span></code></pre></figure>
 
   </div>
 
@@ -643,7 +643,7 @@ requires setting a Spark checkpoint directory.  Users can revert to the old algo
 
     <p>For API details, refer to the <a href="api/scala/index.html#org.graphframes.lib.ConnectedComponents">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">connectedComponents</span><span class="o">.</span><span class="n">run</span><span class="o">()</span>
@@ -655,11 +655,11 @@ requires setting a Spark checkpoint directory.  Users can revert to the old algo
 
     <p>For API details, refer to the <a href="api/python/graphframes.html#graphframes.GraphFrame.connectedComponents">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">connectedComponents</span><span class="p">()</span>
-<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s2">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -678,7 +678,7 @@ assigned to the SCC containing that vertex.</p>
 
     <p>For API details, refer to the <a href="api/scala/index.html#org.graphframes.lib.StronglyConnectedComponents">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">stronglyConnectedComponents</span><span class="o">.</span><span class="n">maxIter</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
@@ -690,11 +690,11 @@ assigned to the SCC containing that vertex.</p>
 
     <p>For API details, refer to the <a href="api/python/graphframes.html#graphframes.GraphFrame.stronglyConnectedComponents">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">stronglyConnectedComponents</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s2">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -720,7 +720,7 @@ trivial solutions (all nodes are identified into a single community).</p>
 
     <p>For API details, refer to the <a href="api/scala/index.html#org.graphframes.lib.LabelPropagation">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">labelPropagation</span><span class="o">.</span><span class="n">maxIter</span><span class="o">(</span><span class="mi">5</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
@@ -732,11 +732,11 @@ trivial solutions (all nodes are identified into a single community).</p>
 
     <p>For API details, refer to the <a href="api/python/graphframes.html#graphframes.GraphFrame.labelPropagation">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">labelPropagation</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;label&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -764,7 +764,7 @@ personalizes the results for that vertex.</p>
 
     <p>For API details, refer to the <a href="api/scala/index.html#org.graphframes.lib.PageRank">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="c1">// Run PageRank until convergence to tolerance &quot;tol&quot;.</span>
@@ -787,22 +787,22 @@ personalizes the results for that vertex.</p>
 
     <p>For API details, refer to the <a href="api/python/graphframes.html#graphframes.GraphFrame.pageRank">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
-<span class="c"># Run PageRank until convergence to tolerance &quot;tol&quot;.</span>
+<span class="c1"># Run PageRank until convergence to tolerance &quot;tol&quot;.</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="p">(</span><span class="n">resetProbability</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="c"># Display resulting pageranks and final edge weights</span>
-<span class="c"># Note that the displayed pagerank may be truncated, e.g., missing the E notation.</span>
-<span class="c"># In Spark 1.5+, you can use show(truncate=False) to avoid truncation.</span>
-<span class="n">results</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;pagerank&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">results</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;src&quot;</span><span class="p">,</span> <span class="s">&quot;dst&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Display resulting pageranks and final edge weights</span>
+<span class="c1"># Note that the displayed pagerank may be truncated, e.g., missing the E notation.</span>
+<span class="c1"># In Spark 1.5+, you can use show(truncate=False) to avoid truncation.</span>
+<span class="n">results</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;pagerank&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">results</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;dst&quot;</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c"># Run PageRank for a fixed number of iterations.</span>
+<span class="c1"># Run PageRank for a fixed number of iterations.</span>
 <span class="n">results2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="p">(</span><span class="n">resetProbability</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="c"># Run PageRank personalized for vertex &quot;a&quot;</span>
-<span class="n">results3</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="p">(</span><span class="n">resetProbability</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">sourceId</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">)</span></code></pre></figure>
+<span class="c1"># Run PageRank personalized for vertex &quot;a&quot;</span>
+<span class="n">results3</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="p">(</span><span class="n">resetProbability</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">sourceId</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span></code></pre></figure>
 
   </div>
 
@@ -821,7 +821,7 @@ specified by vertex ID.  Note that this takes edge direction into account.</p>
 
     <p>For API details, refer to the <a href="api/scala/index.html#org.graphframes.lib.ShortestPaths">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">results</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">shortestPaths</span><span class="o">.</span><span class="n">landmarks</span><span class="o">(</span><span class="nc">Seq</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;d&quot;</span><span class="o">)).</span><span class="n">run</span><span class="o">()</span>
@@ -833,11 +833,11 @@ specified by vertex ID.  Note that this takes edge direction into account.</p>
 
     <p>For API details, refer to the <a href="api/python/graphframes.html#graphframes.GraphFrame.shortestPaths">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
-<span class="n">results</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">shortestPaths</span><span class="p">(</span><span class="n">landmarks</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;d&quot;</span><span class="p">])</span>
-<span class="n">results</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;distances&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">results</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">shortestPaths</span><span class="p">(</span><span class="n">landmarks</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">])</span>
+<span class="n">results</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;distances&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -853,7 +853,7 @@ specified by vertex ID.  Note that this takes edge direction into account.</p>
 
     <p>For API details, refer to the <a href="api/scala/index.html#org.graphframes.lib.TriangleCount">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">results</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">triangleCount</span><span class="o">.</span><span class="n">run</span><span class="o">()</span>
@@ -865,11 +865,11 @@ specified by vertex ID.  Note that this takes edge direction into account.</p>
 
     <p>For API details, refer to the <a href="api/python/graphframes.html#graphframes.GraphFrame.triangleCount">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">triangleCount</span><span class="p">()</span>
-<span class="n">results</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;count&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">results</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -888,7 +888,7 @@ for more details.</p>
 
 <div data-lang="scala">
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="c1">// Save vertices and edges as Parquet to some location.</span>
@@ -906,18 +906,18 @@ for more details.</p>
 
 <div data-lang="python">
 
-    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
 
-<span class="c"># Save vertices and edges as Parquet to some location.</span>
-<span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s">&quot;hdfs://myLocation/vertices&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s">&quot;hdfs://myLocation/edges&quot;</span><span class="p">)</span>
+<span class="c1"># Save vertices and edges as Parquet to some location.</span>
+<span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;hdfs://myLocation/vertices&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;hdfs://myLocation/edges&quot;</span><span class="p">)</span>
 
-<span class="c"># Load the vertices and edges back.</span>
-<span class="n">sameV</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s">&quot;hdfs://myLocation/vertices&quot;</span><span class="p">)</span>
-<span class="n">sameE</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s">&quot;hdfs://myLocation/edges&quot;</span><span class="p">)</span>
+<span class="c1"># Load the vertices and edges back.</span>
+<span class="n">sameV</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;hdfs://myLocation/vertices&quot;</span><span class="p">)</span>
+<span class="n">sameE</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;hdfs://myLocation/edges&quot;</span><span class="p">)</span>
 
-<span class="c"># Create an identical GraphFrame.</span>
+<span class="c1"># Create an identical GraphFrame.</span>
 <span class="n">sameG</span> <span class="o">=</span> <span class="n">GraphFrame</span><span class="p">(</span><span class="n">sameV</span><span class="p">,</span> <span class="n">sameE</span><span class="p">)</span></code></pre></figure>
 
   </div>
@@ -946,7 +946,7 @@ of adjacent users.</p>
 
     <p>For API details, refer to the <a href="api/scala/index.html#org.graphframes.lib.AggregateMessages">API docs</a>.</p>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">import</span> <span class="nn">org.graphframes.lib.AggregateMessages</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
@@ -962,14 +962,36 @@ of adjacent users.</p>
   <span class="o">.</span><span class="n">agg</span><span class="o">(</span><span class="n">sum</span><span class="o">(</span><span class="nc">AM</span><span class="o">.</span><span class="n">msg</span><span class="o">).</span><span class="n">as</span><span class="o">(</span><span class="s">&quot;summedAges&quot;</span><span class="o">))</span>  <span class="c1">// sum up ages, stored in AM.msg column</span>
 <span class="n">agg</span><span class="o">.</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
 
+    <p>For a more complex example, look at the code used to implement the
+<a href="api/scala/index.html#org.graphframes.examples.BeliefPropagation$">Belief Propagation example</a>.</p>
+
+  </div>
+
+<div data-lang="python">
+
+    <p>For API details, refer to the
+<a href="api/python/graphframes.html#graphframes.GraphFrame.aggregateMessages">API docs</a>.</p>
+
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="nb">sum</span> <span class="k">as</span> <span class="n">sqlsum</span>
+<span class="kn">from</span> <span class="nn">graphframes.lib</span> <span class="kn">import</span> <span class="n">AggregateMessages</span> <span class="k">as</span> <span class="n">AM</span>
+<span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c1"># Get example graph</span>
+
+<span class="c1"># For each user, sum the ages of the adjacent users.</span>
+<span class="n">msgToSrc</span> <span class="o">=</span> <span class="n">AM</span><span class="o">.</span><span class="n">dst</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+<span class="n">msgToDst</span> <span class="o">=</span> <span class="n">AM</span><span class="o">.</span><span class="n">src</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+<span class="n">agg</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">aggregateMessages</span><span class="p">(</span>
+    <span class="n">sqlsum</span><span class="p">(</span><span class="n">AM</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;summedAges&quot;</span><span class="p">),</span>
+    <span class="n">sendToSrc</span><span class="o">=</span><span class="n">msgToSrc</span><span class="p">,</span>
+    <span class="n">sendToDst</span><span class="o">=</span><span class="n">msgToDst</span><span class="p">)</span>
+<span class="n">agg</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+
+    <p>For a more complex example, look at the code used to implement the
+<a href="api/python/graphframes.examples.html#graphframes.examples.BeliefPropagation">Belief Propagation example</a>.</p>
+
   </div>
 
 </div>
-
-<p><code>AggregateMessages</code> does not yet have a Python API, but we expect to add one in the future.</p>
-
-<p>For a more complex example, look at the code used to implement the
-<a href="api/scala/index.html#org.graphframes.examples.BeliefPropagation$">Belief Propagation example</a>.</p>
 
 <h1 id="graphx-graphframe-conversions">GraphX-GraphFrame conversions</h1>
 
@@ -1032,7 +1054,7 @@ with new <code>GraphFrame.vertices</code> column &#8220;category&#8221; and new 
       <li><a href="api/scala/index.html#org.graphframes.GraphFrame$">fromGraphX</a></li>
     </ul>
 
-    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.apache.spark.graphx.Graph</span>
+    <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.apache.spark.graphx.Graph</span>
 <span class="k">import</span> <span class="nn">org.apache.spark.Row</span>
 <span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
